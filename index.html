@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mechanical Engineer • Data Analyst — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Mechanical engineer and data analyst portfolio with projects, credentials, and contact." />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">KM — MechEng • Data</a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#credentials">Credentials</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-text">
+            <h1>Hello — I’m a Mechanical Engineer & Data Analyst</h1>
+            <p class="lead">I design mechanical systems and extract insights from complex datasets. I build models, automate workflows, and visualize results to inform decisions.</p>
+            <div class="hero-cta">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn ghost" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+            <ul class="skills">
+              <li>Python • Pandas</li>
+              <li>MATLAB • CAD</li>
+              <li>FEA • Data Viz</li>
+            </ul>
+          </div>
+          <div class="hero-card">
+            <div class="card-inner">
+              <svg viewBox="0 0 120 80" class="wave" aria-hidden>
+                <rect x="0" y="0" width="120" height="80" rx="8" fill="#0f1724" />
+              </svg>
+              <div class="card-content">
+                <h3>Selected Work</h3>
+                <p>Optimization of a pneumatic actuator — reduced mass by 18% while maintaining strength.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section container">
+        <h2 class="section-title">About Me</h2>
+        <p>I combine mechanical design intuition with data-driven analysis to deliver efficient engineered solutions. My background includes CAD, FEA, experimental testing, and analytics using Python and SQL. I'm passionate about automating workflows and creating reproducible analyses that support engineering decisions.</p>
+      </section>
+
+      <section id="projects" class="section container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+          <article class="project-card reveal">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop&ixlib=rb-1.2.1&s=placeholder" alt="Project 1 screenshot" loading="lazy">
+            <div class="project-body">
+              <h3>Actuator Topology Optimization</h3>
+              <p>Used FEA and gradient-based optimization to reduce actuator mass while meeting stress and deflection constraints.</p>
+              <p class="meta">Tech: Python, FEA, CAD</p>
+              <div class="project-links"><a href="#" target="_blank">Repo</a><a href="#" target="_blank">Demo</a></div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=1200&auto=format&fit=crop&ixlib=rb-1.2.1&s=placeholder" alt="Project 2 screenshot" loading="lazy">
+            <div class="project-body">
+              <h3>Manufacturing Data Dashboard</h3>
+              <p>Built an ETL pipeline and interactive dashboard to monitor process KPIs, reducing downtime by 12%.</p>
+              <p class="meta">Tech: SQL, Python, Dash</p>
+              <div class="project-links"><a href="#" target="_blank">Repo</a><a href="#" target="_blank">Dashboard</a></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="credentials" class="section container">
+        <h2 class="section-title">Credentials</h2>
+        <ul class="credentials">
+          <li>BS Mechanical Engineering — San Diego State University</li>
+          <li>Certificate: Data Science with Python — Coursera</li>
+          <li>FEA Specialist Workshop — 2024</li>
+        </ul>
+      </section>
+
+      <section id="contact" class="section container">
+        <h2 class="section-title">Contact</h2>
+        <p>I'm open to collaboration and opportunities. Reach me via email or connect on LinkedIn.</p>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:youremail@example.com">youremail@example.com</a>
+          <a class="contact-card" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="contact-card" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Mechanical Engineer & Data Analyst — Built with a minimal modern theme.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Simple reveal-on-scroll
+      const reveals = document.querySelectorAll('.reveal');
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      reveals.forEach(r => obs.observe(r));
+    </script>
+  </body>
+</html>

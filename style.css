@@ -26,6 +26,8 @@ body{
   -moz-osx-font-smoothing:grayscale;
   line-height:1.5;
 }
+body.is-loading{opacity:0.01}
+body.is-ready{opacity:1;transition:opacity .45s ease}
 .container{max-width:var(--max-width);margin:0 auto;padding:40px 20px}
 .site-header{backdrop-filter: blur(10px);position:sticky;top:0;background:rgba(246,241,232,0.82);border-bottom:1px solid rgba(44,38,32,0.08);z-index:30}
 .header-inner{display:flex;align-items:center;justify-content:space-between}
@@ -108,8 +110,14 @@ body{
 
 /* small micro-interactions */
 .project-card:hover{transform:translateY(-4px);box-shadow:0 8px 22px rgba(44,38,32,0.12)}
-.reveal{opacity:0;transform:translateY(16px);transition:all .7s cubic-bezier(.2,.9,.2,1)}
-.reveal.visible{opacity:1;transform:none}
+.motion-item,.reveal{opacity:0;transform:translateY(16px);transition:opacity .68s cubic-bezier(.21,.75,.26,1),transform .68s cubic-bezier(.21,.75,.26,1);transition-delay:var(--stagger,0ms)}
+.motion-item.visible,.reveal.visible{opacity:1;transform:none}
 
 /* subtle focus states */
 a:focus{outline:2px solid rgba(122,94,70,0.2);outline-offset:3px}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .motion-item,.reveal,.project-card{opacity:1;transform:none;transition:none}
+  body.is-loading,body.is-ready{opacity:1;transition:none}
+}

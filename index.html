@@ -266,37 +266,6 @@
       </div>
     </footer>
 
-    <script>
-      const yearNode = document.getElementById('year');
-      if (yearNode) {
-        yearNode.textContent = new Date().getFullYear();
-      }
-
-      const reveals = document.querySelectorAll('.reveal');
-      const sideLinks = document.querySelectorAll('.side-menu a');
-      const sections = document.querySelectorAll('section[id]');
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.16 });
-
-      reveals.forEach((item) => observer.observe(item));
-
-      const navObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          sideLinks.forEach((link) => {
-            const active = link.getAttribute('href') === `#${entry.target.id}`;
-            link.classList.toggle('active', active);
-          });
-        });
-      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0.1 });
-
-      sections.forEach((section) => navObserver.observe(section));
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
